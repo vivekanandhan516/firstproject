@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+        <center><h2>Register Page!</h2>
+        
+	<form action="/insert/" method="POST">{% csrf_token %}
+	<table>	
+
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="Name" ></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="email" name="Email"></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="pasd"></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input type="submit" value="registerme!"></td>
+		</tr>	
+		{% if messages %}
+		{% for messages in messages %}
+		<h2>{{messages}}</h2>
+		{% endfor %}
+		{% endif %}	
+	</table>	
+	</form>
+	</center>	
+</body>	
+</html>
