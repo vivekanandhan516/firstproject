@@ -3,9 +3,25 @@
    
 </head>   
  <body> 
- {% csrf_token %}
-   <center><h2>welcome Page!</h2> 
-    
+   <center><h2>Delete Page!</h2>    
+   <form action="/deletetask/" method="POST">{% csrf_token %}
+	<table>
+		<tr>
+			<td>userID:</td>
+			<td><input type="number" name="ID" value="{{x.id}}" ></td>
+		</tr>	
+		<tr>
+			<td></td>
+			<td><input type="submit" value="Delete"></td>
+		</tr>				
+		{% if messages %}
+		{% for messages in messages %}
+		<h2>{{messages}}</h2>
+		{% endfor %}
+		{% endif %}
+	</table>
+		
+</form> 
 </center>
 </body>
 </html>
